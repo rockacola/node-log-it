@@ -2,7 +2,7 @@ import * as loglevel from 'loglevel'
 import * as moment from 'moment'
 import { assign } from 'lodash'
 
-interface Options {
+interface LoggerOptions {
   level?: loglevel.LogLevelDesc,
   displayTimestamp?: boolean,
   displayName?: boolean,
@@ -14,10 +14,10 @@ interface Options {
 
 class Logger {
   private name: string
-  private options: Options
+  private options: LoggerOptions
   private logger: loglevel.Logger
 
-  constructor(name: string, options: Options = {}) {
+  constructor(name: string, options: LoggerOptions = {}) {
     // Associate required properties
     this.name = name
 

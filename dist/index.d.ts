@@ -1,5 +1,5 @@
 import * as loglevel from 'loglevel';
-interface Options {
+interface LoggerOptions {
     level?: loglevel.LogLevelDesc;
     displayTimestamp?: boolean;
     displayName?: boolean;
@@ -12,7 +12,7 @@ declare class Logger {
     private name;
     private options;
     private logger;
-    constructor(name: string, options?: Options);
+    constructor(name: string, options?: LoggerOptions);
     static readonly levels: loglevel.LogLevel;
     getName(): string;
     getLevel(): number;
