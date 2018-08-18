@@ -6,5 +6,8 @@
     "outDir": "",
     "strict": true,
     "declaration": true
-  }
+  },
+  "exclude": [
+    "./examples/**/*.ts"
+  ]
 }
