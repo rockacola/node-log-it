@@ -10,6 +10,8 @@
     "build": "npm run clean && webpack",
     "rebuild": "rm -rf ./node_modules && npm install",
     "rebuild:hard": "rm -f ./package-lock.json && npm run rebuild",
+    "tag:minor": "npm version minor",
+    "tag:patch": "npm version patch",
     "test": ""
   },
   "repository": {
