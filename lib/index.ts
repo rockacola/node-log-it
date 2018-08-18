@@ -8,6 +8,8 @@ interface Options {
   displayTimestamp?: boolean,
   displayName?: boolean,
   displayLevel?: boolean,
+  useLevelInitial?: boolean,
+  useLocalTime?: boolean,
   timestampFormat?: string,
 }
 
@@ -26,6 +28,8 @@ class Logger {
       displayTimestamp: true,
       displayName: true,
       displayLevel: true,
+      useLevelInitial: false,
+      useLocalTime: false,
       timestampFormat: 'YYYY-MM-DD HH:mm:ss.SSS'
     }
     assign(this.options, options)
@@ -85,18 +89,34 @@ class Logger {
 
     // Prepend items in reverse order
     if (this.options.displayLevel) {
-      const levelLabel = levelText + ':'
+      const levelLabel = this.getLevelLabel(levelText)
       args.unshift('\x1b[1m' + levelLabel + '\x1b[0m')
     }
     if (this.options.displayName) {
       args.unshift('\x1b[36m' + this.name + '\x1b[0m')
     }
     if (this.options.displayTimestamp) {
-      const tsLabel = moment.utc().format(this.options.timestampFormat)
+      const tsLabel = this.getTimestampLabel()
       args.unshift('\x1b[2m' + tsLabel + '\x1b[0m')
     }
 
     return args
+  }
+
+  private getLevelLabel(levelText: string): string {
+    if (this.options.useLevelInitial) {
+      return levelText.charAt(0).toUpperCase()
+    } else {
+      return levelText + ':'
+    }
+  }
+
+  private getTimestampLabel(): string {
+    if (this.options.useLocalTime) {
+      return moment().format(this.options.timestampFormat)
+    } else {
+      return moment.utc().format(this.options.timestampFormat)
+    }
   }
 }
 
