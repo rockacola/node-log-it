@@ -16,6 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/rockacola/node-log-it.git"
   },
+  "keywords": [
+    "console",
+    "log",
+    "logger",
+    "logging"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rockacola/node-log-it/issues"
