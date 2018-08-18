@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const Logger = require('../dist/index.js').default
+const Logger = require('../dist/index.js').Logger
 
 // -- Implementation
 

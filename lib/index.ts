@@ -2,7 +2,7 @@ import * as loglevel from 'loglevel'
 import * as moment from 'moment'
 import { assign } from 'lodash'
 
-interface LoggerOptions {
+export interface LoggerOptions {
   level?: loglevel.LogLevelDesc,
   displayTimestamp?: boolean,
   displayName?: boolean,
@@ -12,7 +12,7 @@ interface LoggerOptions {
   timestampFormat?: string,
 }
 
-class Logger {
+export class Logger {
   private name: string
   private options: LoggerOptions
   private logger: loglevel.Logger
@@ -130,5 +130,3 @@ class Logger {
     }
   }
 }
-
-export default Logger

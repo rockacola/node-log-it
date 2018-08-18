@@ -1,4 +1,4 @@
-import Logger from '../dist/index'
+import { Logger, LoggerOptions } from '../dist/index'
 
 // -- Implementation
 
