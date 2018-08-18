@@ -58,28 +58,28 @@ class Logger {
     this.logger.setLevel(level)
   }
 
-  trace() {
-    const args = this.manipulateArguments(arguments, 'trace')
+  trace(...argumentArray: any[]) {
+    const args = this.manipulateArguments(argumentArray, 'trace')
     this.logger.trace.apply(this, args)
   }
 
-  debug() {
-    const args = this.manipulateArguments(arguments, 'debug')
+  debug(...argumentArray: any[]) {
+    const args = this.manipulateArguments(argumentArray, 'debug')
     this.logger.debug.apply(this, args)
   }
 
-  info() {
-    const args = this.manipulateArguments(arguments, 'info')
+  info(...argumentArray: any[]) {
+    const args = this.manipulateArguments(argumentArray, 'info')
     this.logger.info.apply(this, args)
   }
 
-  warn() {
-    const args = this.manipulateArguments(arguments, 'warn')
+  warn(...argumentArray: any[]) {
+    const args = this.manipulateArguments(argumentArray, 'warn')
     this.logger.warn.apply(this, args)
   }
 
-  error() {
-    const args = this.manipulateArguments(arguments, 'error')
+  error(...argumentArray: any[]) {
+    const args = this.manipulateArguments(argumentArray, 'error')
     this.logger.error.apply(this, args)
   }
 

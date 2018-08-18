@@ -17,11 +17,11 @@ declare class Logger {
     getName(): string;
     getLevel(): number;
     setLevel(level: loglevel.LogLevelDesc): void;
-    trace(): void;
-    debug(): void;
-    info(): void;
-    warn(): void;
-    error(): void;
+    trace(...argumentArray: any[]): void;
+    debug(...argumentArray: any[]): void;
+    info(...argumentArray: any[]): void;
+    warn(...argumentArray: any[]): void;
+    error(...argumentArray: any[]): void;
     private manipulateArguments;
     private getLevelLabel;
     private getTimestampLabel;
