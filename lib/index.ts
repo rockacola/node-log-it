@@ -1,7 +1,6 @@
 import * as loglevel from 'loglevel'
 import * as moment from 'moment'
 import { assign } from 'lodash'
-import LoggerValidator from './validators/logger-validator'
 
 interface Options {
   level?: loglevel.LogLevelDesc,
@@ -35,8 +34,8 @@ class Logger {
     assign(this.options, options)
 
     // Validation
-    LoggerValidator.validateName(this.name)
-    LoggerValidator.validateLogLevel(this.options.level)
+    this.validateName(this.name)
+    this.validateLogLevel(this.options.level)
 
     // Bootstrapping
     this.logger = loglevel.getLogger(this.name)
@@ -116,6 +115,18 @@ class Logger {
       return moment().format(this.options.timestampFormat)
     } else {
       return moment.utc().format(this.options.timestampFormat)
+    }
+  }
+
+  private validateName(name: string | undefined) {
+    if (!name) {
+      throw new Error('Unspecified log name.')
+    }
+  }
+
+  private validateLogLevel(level: loglevel.LogLevelDesc | undefined) {
+    if (level === undefined) {
+      throw new Error('Unspecified log level.')
     }
   }
 }
