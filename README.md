@@ -28,3 +28,17 @@ Usage:
 const logger = new Logger('example-2', { level: 'info' })
 logger.info('Hello', 'World')
 ```
+
+## Examples
+
+Run a JavaScript example:
+
+```js
+node examples/basic.js
+```
+
+Run a TypeScript example:
+
+```js
+./node_modules/.bin/ts-node examples/typescript.ts
+```
