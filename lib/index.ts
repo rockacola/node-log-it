@@ -63,22 +63,22 @@ class Logger {
     this.logger.trace.apply(this, args)
   }
 
-  debug () {
+  debug() {
     const args = this.manipulateArguments(arguments, 'debug')
     this.logger.debug.apply(this, args)
   }
 
-  info () {
+  info() {
     const args = this.manipulateArguments(arguments, 'info')
     this.logger.info.apply(this, args)
   }
 
-  warn () {
+  warn() {
     const args = this.manipulateArguments(arguments, 'warn')
     this.logger.warn.apply(this, args)
   }
 
-  error () {
+  error() {
     const args = this.manipulateArguments(arguments, 'error')
     this.logger.error.apply(this, args)
   }
