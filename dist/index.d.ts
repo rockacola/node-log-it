@@ -1,5 +1,5 @@
 import * as loglevel from 'loglevel';
-interface LoggerOptions {
+export interface LoggerOptions {
     level?: loglevel.LogLevelDesc;
     displayTimestamp?: boolean;
     displayName?: boolean;
@@ -8,7 +8,7 @@ interface LoggerOptions {
     useLocalTime?: boolean;
     timestampFormat?: string;
 }
-declare class Logger {
+export declare class Logger {
     private name;
     private options;
     private logger;
@@ -28,4 +28,3 @@ declare class Logger {
     private validateName;
     private validateLogLevel;
 }
-export default Logger;
